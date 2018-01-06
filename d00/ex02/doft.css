@@ -33,6 +33,43 @@ body {
 	border-radius: 10px;
 }
 
+.green-container {
+	position: relative;
+	background: #88FF89;
+	z-index: 11;
+	width: 500px;
+	height: 160px;
+	margin-top: 20px;
+	margin-left: 150px;
+	box-shadow: 10px 10px 10px black;
+	border-radius: 10px;
+}
+
+.chair {
+	position: relative;
+	background: transparent;
+	z-index: 11;
+	width: 100px;
+	height: 200px;
+	margin-top: -200px;
+	margin-left: 320px;
+}
+
+.screen {
+	position: relative;
+	background: transparent;
+	z-index: 11;
+	width: 180px;
+	height: 130px;
+	margin-top: -220px;
+	margin-left: 740px;
+}
+
+.ordi
+{
+	text-shadow: 4px 4px 5px red;
+}
+
 .left {
 	margin-left: 240px;
 }
@@ -95,6 +132,7 @@ body {
 	width: 920px;
 	left: 10px;
 	top: 10px;
+	z-index: 10;
 }
 
 /* left pannel */
