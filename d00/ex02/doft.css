@@ -1,0 +1,136 @@
+body {
+	background: #4B4B4B;
+}
+
+.header {
+	background: #909090;
+	width: 1448px;
+	height: 130px;
+	margin-top: 15px;
+	margin-left: 200px;
+	box-shadow: 10px 10px 10px black;
+	border-radius: 10px;
+}
+
+.middle-container {
+	background: #909090;
+	width: 940px;
+	height: 535px;
+	margin-top: -450px;
+	margin-left: 460px;
+	box-shadow: 10px 10px 10px black;
+	border-radius: 10px;
+}
+
+/* Side container elem */
+.side-container {
+	background: #909090;
+	width: 200px;
+	height: 450px;
+	margin-top: 20px;
+	margin-left: 100px;
+	box-shadow: 10px 10px 10px black;
+	border-radius: 10px;
+}
+
+.left {
+	margin-left: 240px;
+}
+
+.right {
+	margin-left: 1420px;
+	margin-top: -535px;
+}
+
+.crop-y {
+	background: #909090;
+	position: absolute;
+	margin-left: 184px;
+	top: 350px;
+	width: 15px;
+	height: 100px;
+}
+
+.crop-x {
+	background: #909090;
+	position: absolute;
+	margin-left: 15px;
+	top: 449px;
+	width: 180px;
+	height: 40px;
+}
+
+/* IMAGES */
+.logo {
+	position: absolute;
+	width: 400px;
+	margin-top: 8px;
+	float: left;
+	margin-left: 20px;
+}
+
+.close {
+	position: relative;
+	width: 23px;
+	top: 95px;
+	left: 1410px;
+}
+
+.reload {
+	position: absolute;
+	width: 20px;
+	margin-top: 10px;
+	margin-left: 1390px;
+}
+
+.magnifier {
+	position: absolute;
+	width: 245px;
+	top: 25px;
+	margin-left: 1150px;
+}
+
+.cluster {
+	position: relative;
+	width: 920px;
+	left: 10px;
+	top: 10px;
+}
+
+/* left pannel */
+.side-img {
+	position: absolute;
+	width: 70px;
+	margin-left: 70px;
+}
+
+.p1 {
+	top: 180px;
+}
+
+.p2 {
+	top: 260px;
+}
+
+.towel {
+	top: 290px;
+}
+
+.brick {
+	top: 350px;
+	width: 45px;
+}
+
+.p3 {
+	top: 335px;
+	margin-left: 65px;
+	border: 5px solid red;
+}
+
+.p4 {
+	top: 420px;
+}
+
+.p5 {
+	top: 500px;
+}
