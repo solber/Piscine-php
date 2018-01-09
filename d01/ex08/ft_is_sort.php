@@ -7,7 +7,8 @@
 
 		$tmp = $tab;
 
-		sort($tab);
+		if (!empty($tab))
+			sort($tab);
 		foreach ($tab as $elem)
 		{
 			if ($elem != $tmp[$i])
