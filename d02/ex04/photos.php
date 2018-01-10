@@ -39,8 +39,13 @@
 			$ch = curl_init($imglink);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$img = curl_exec($ch);
-			$fp = fopen($path . '/' . $imgname, 'w');
-			fwrite($fp, $img);
+			try {
+				$fp = @fopen($path . '/' . $imgname, 'w');
+			} catch (Exception $e) {}
+			try {
+				@fwrite($fp, $img);	
+			} catch (Exception $e) {}
+			
 		}
 	}
 
