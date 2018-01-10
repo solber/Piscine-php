@@ -9,12 +9,12 @@
         $i++;
     }
     asort($array);
-    foreach ($array as $v){
-        if ($v['e'] == 7) {
-            echo str_pad(substr(trim($v['a']), 0, 12), 12, " ")." ";
-            echo str_pad(substr(trim($v['c']), 0, 12), 8, " ")." ";
-            echo date("M", $v["f1"]);
-            echo str_pad(date("j", $v["f1"]), 3, " ", STR_PAD_LEFT)." ".date("H:i", $v["f1"]);
+    foreach ($array as $val){
+        if ($val['e'] == 7) {
+            echo str_pad(substr(trim($val['a']), 0, 12), 12, " ")." ";
+            echo str_pad(substr(trim($val['c']), 0, 12), 8, " ")." ";
+            echo date("M", $val["f"]);
+            echo str_pad(date("j", $val["f"]), 3, " ", STR_PAD_LEFT)." ".date("H:i", $val["f"]);
             echo "\n";
         }
     }
