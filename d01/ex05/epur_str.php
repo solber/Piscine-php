@@ -2,7 +2,7 @@
 <?php
 
 	$str = $argv[1];
-	if (isset($str))
+	if (!empty($str))
 		echo trim(preg_replace('/\s\s+/', ' ', $str)) ."\n";
 
 ?>

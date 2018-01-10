@@ -3,7 +3,7 @@
 
 function ft_split($str)
 {
-	$str = ereg_replace("[ ]+", " ", $str);
+	$str = trim(preg_replace('/\s\s+/', ' ', $str));
 
 	$elem = explode(" ", $str);
 
@@ -14,7 +14,7 @@ function ft_split($str)
 
 	$first = array_shift($tab);
 
-	if (isset($argv[1]))
+	if (!empty($argv[1]))
 	{
 		foreach ($tab as $elem)
 				echo ($elem) ." ";

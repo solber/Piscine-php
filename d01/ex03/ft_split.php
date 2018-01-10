@@ -1,13 +1,14 @@
-#!/usr/bin/php
 <?php
 
 function ft_split($str)
 {
-	$str = ereg_replace("[ ]+", " ", $str);
-
+	if (is_null($str))
+		return (null);
+	$str = trim(preg_replace('/\s\s+/', ' ', $str));
+	
 	$elem = explode(" ", $str);
-
-	sort($elem, SORT_STRING);
+	
+	sort($elem);
 
 	return ($elem);
 }

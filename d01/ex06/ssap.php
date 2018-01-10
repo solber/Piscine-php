@@ -17,17 +17,15 @@
 
 		$elem = explode(" ", $str);
 
-		sort($elem, SORT_STRING);
+		sort($elem);
 
 		return ($elem);
 	}
 
 	$res = ft_split($str);
-	$i = 1;
 
-	while ($res[$i])
-	{
-		echo $res[$i] ."\n";
-		$i++;
+	foreach ($res as $key) {
+		if (!empty($key))
+			echo $key ."\n";
 	}
 ?>
