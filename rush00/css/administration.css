@@ -1,0 +1,71 @@
+.tbl-container {
+  position: absolute;
+  top: 520px;
+  left: 20px;
+  bottom: 5px;
+  height: 240px;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+table.blueTable {
+  overflow: auto;
+  position: absolute;
+  border: 1px solid #9F52A4;
+  background-color: #EEEEEE;
+  width: 300px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+  background: #A88EF5;
+}
+table.blueTable thead {
+  background: #7A4EA4;
+  background: -moz-linear-gradient(top, #9b7abb 0%, #875fad 66%, #7A4EA4 100%);
+  background: -webkit-linear-gradient(top, #9b7abb 0%, #875fad 66%, #7A4EA4 100%);
+  background: linear-gradient(to bottom, #9b7abb 0%, #875fad 66%, #7A4EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #CCA1F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #F590FF;
+  background: #A36AF5;
+  background: -moz-linear-gradient(top, #ba8ff7 0%, #ac79f6 66%, #A36AF5 100%);
+  background: -webkit-linear-gradient(top, #ba8ff7 0%, #ac79f6 66%, #A36AF5 100%);
+  background: linear-gradient(to bottom, #ba8ff7 0%, #ac79f6 66%, #A36AF5 100%);
+  border-top: 2px solid #444444;
+}
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
