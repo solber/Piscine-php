@@ -1,3 +1,4 @@
-SELECT titre, resum FROM film
-WHERE INSTR(resum, 'vincent') > 0
-ORDER BY id_film ASC;
+SELECT titre, resum
+  FROM film
+  WHERE LOWER(resum) LIKE '%vincent%'
+  ORDER BY id_film ASC;
