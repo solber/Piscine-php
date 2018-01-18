@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+    </script>
+    <style>
+        body {
+            background-image: url(http://www.lol-wallpapers.com/wp-content/uploads/2017/08/Star-Guardian-Ahri-Splash-Art-HD-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol-2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .calc {
+            position: relative;
+            background-color: #ffffff;
+            width: 350px;
+            top: 100px;
+            margin: auto auto;
+            padding: 20px 30px 30px 30px;
+            box-shadow: 5px 5px 30px;
+        }
+
+        input, select {
+            position: relative;
+            left: 20px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="submit"]{
+            left: 36%;
+        }
+
+    </style>
+    <script>
+        var calc;
+        var left;
+        var right;
+        var operator;
+
+        $(document).ready(function(){
+            calc = $('#calc');
+            calc.submit(submit);
+
+            left = $('#left');
+            operator = $('#operator');
+            right = $('#right');
+
+            setInterval("alert('Please, use me...')", 30000);
+        })
+
+        function numIsValid(l, r) {
+            l = parseInt(l, 10);
+            r = parseInt(r, 10);
+            if (l >= 0 && r >= 0)
+                return (true);
+            return (false);
+        }
+
+        function submit(event) {
+            event.preventDefault();
+
+            var l = Number(left.val());
+            var r = Number(right.val());
+
+            if (!numIsValid(l, r)) {
+                alert("Error :(");
+                return false;
+            }
+
+            switch (operator.val()) {
+                case ('add'):
+                    result(l + r);
+                    break;
+                case ('mul'):
+                    result(l * r);
+                    break;
+                case ('div'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l / r);
+                    }
+                    break;
+                case ('mod'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l / r);
+                    }
+                    break;
+                case ('min'):
+                    result(l - r);
+                    break;
+                default:
+                    result("operation not found");
+                    break;
+            }
+        }
+
+        function result(res) {
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</head>
+<body>
+    <div class="calc">
+        <div class="circle"></div>
+        <center><h1>Calculator</h1></center>
+        <form id="calc">
+            <p><input type="text" id="left" placeholder="First number" value="0">
+            <select id="operator">
+                <option value="add">+</option>
+                <option value="min">-</option>
+                <option value="mul">*</option>
+                <option value="div">/</option>
+                <option value="mod">%</option>
+            </select>
+            <input type="text" id="right" placeholder="Second number" value="0"></p>
+            <br>
+            <input type="submit" id="submit" value="Try me !">
+        </form>
+    </div>
+</body>
+</html>
