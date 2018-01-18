@@ -6,25 +6,37 @@ window.onload = function () {
     ft_list = document.querySelector("#ft_list");
     var tmp = document.cookie;
     if (tmp) {
-        cookie = JSON.parse(tmp);
+        cookie = JSON.parse(tmp.split('=')[1]);
         cookie.forEach(function (e) {
             addTodo(e);
         });
     }
 };
 
-window.onunload = function () {
+function setCookies()
+{
     var todo = ft_list.children;
     var newCookie = [];
     for (var i = 0; i < todo.length; i++)
         newCookie.unshift(todo[i].innerHTML);
-    document.cookie = JSON.stringify(newCookie);
-};
+    //document.cookie = JSON.stringify(newCookie);
+    setCookieFromVal('list', JSON.stringify(newCookie), 1);
+}
+
+function setCookieFromVal(name, value, exdays) {
+    var d, expires;
+    exdays = exdays || 1;
+    d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + "; " + expires;
+}
 
 function newTodo(){
     var todo = prompt("What to add ?", '');
     if (todo !== '') {
-        addTodo(todo)
+        addTodo(todo);
+        setCookies();
     }
 }
 
@@ -39,5 +51,6 @@ function addTodo(todo){
 function deleteTodo(){
     if (confirm("Delete this ?")){
         this.parentElement.removeChild(this);
+        setCookies();
     }
 }
