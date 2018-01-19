@@ -13,6 +13,29 @@ window.onload = function () {
     }
 };
 
+function newTodo(){
+    var todo = prompt("What to add ?", '');
+    if (todo !== '') {
+        addTodo(todo);
+        setCookies();
+    }
+}
+
+function addTodo(todo){
+    var div = document.createElement("div");
+    div.innerHTML = todo;
+    div.className += div.className ? ' todorow' : 'todorow';
+    div.addEventListener("click", deleteTodo);
+    ft_list.insertBefore(div, ft_list.firstChild);
+}
+
+function deleteTodo(){
+    if (confirm("Delete this ?")){
+        this.parentElement.removeChild(this);
+        setCookies();
+    }
+}
+
 function setCookies()
 {
     var todo = ft_list.children;
@@ -30,27 +53,4 @@ function setCookieFromVal(name, value, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     expires = "expires=" + d.toUTCString();
     document.cookie = name + "=" + value + "; " + expires;
-}
-
-function newTodo(){
-    var todo = prompt("What to add ?", '');
-    if (todo !== '') {
-        addTodo(todo);
-        setCookies();
-    }
-}
-
-function addTodo(todo){
-    var div = document.createElement("div");
-    div.innerHTML = todo;
-     div.className += div.className ? ' todorow' : 'todorow';
-    div.addEventListener("click", deleteTodo);
-    ft_list.insertBefore(div, ft_list.firstChild);
-}
-
-function deleteTodo(){
-    if (confirm("Delete this ?")){
-        this.parentElement.removeChild(this);
-        setCookies();
-    }
 }
